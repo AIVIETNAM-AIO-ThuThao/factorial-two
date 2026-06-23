@@ -2,25 +2,25 @@ import streamlit as st
 import math
 import random
 
-# Cấu hình trang
+# Cấu hình trang có đười ươi
 st.set_page_config(
     page_title="Giai thừa",
     layout="wide",  
     page_icon="🦍"
 )
 
-# Logo trang
+# Logo trang không thể thiếu khỉ đột
 st.logo(
     image="https://img.icons8.com/color/96/000000/orangutan.png",
 )
 
 st.title("Giai thừa")
-st.header("Hãy giải 1 bài toán về giai thừa nhé! 🦍 🦍 🦍")
+st.header("Ai thông minh hơn khỉ đột? 🦍 🦍 🦍")
 st.markdown("---")
 
 # Tạo dict chứa câu hỏi
 if "questions" not in st.session_state:
-    n = random.randint(1, 20)
+    n = random.randint(1, 10)
     st.session_state.questions = [{
         "n": n,
         "fact": math.factorial(n),
@@ -35,7 +35,7 @@ q = st.session_state.questions[0]   #Câu hỏi đầu tiên
 st.subheader("Câu hỏi nè!")
 st.write(f"**Tính:** {q['n']}! = ?")
 
-# Nhập đáp án
+# Nhận đáp án từ người dùng
 q["answer"] = st.text_input(
     "Đáp án của bạn:", 
     key="cau_1",  
