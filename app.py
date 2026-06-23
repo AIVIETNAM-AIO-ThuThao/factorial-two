@@ -18,7 +18,7 @@ st.title("Giai thừa!")
 st.header("Ai thông minh hơn khỉ đột? 🦍 🦍 🦍")
 st.markdown("---")
 
-# Tạo dict chứa câu hỏi
+# Tạo dict chứa câu hỏi, đáp án, câu trả lời, chấm điểm
 if "questions" not in st.session_state:
     n = random.randint(1, 10)
     st.session_state.questions = [{
@@ -37,7 +37,6 @@ st.write(f"**Tính:** {q['n']}! = ?")
 
 # Nhận đáp án từ người dùng
 q["answer"] = st.text_input(
-    "Đáp án của bạn:", 
     key="cau_1",  
     disabled=st.session_state.da_nop
 )
@@ -58,10 +57,8 @@ if st.button("Sure!", disabled=st.session_state.da_nop):
     
     st.rerun()
 
-# Kết quả
-if st.session_state.da_nop:  # ✅ Kiểm tra đã nộp bài chưa
-    st.subheader("Kết quả")
-    
+# Kết quả sau khi đã nộp bài
+if st.session_state.da_nop:  
     if q["right_wrong"]:
         # TRƯỜNG HỢP ĐÚNG
         st.success(f"ĐÚNG! {q['n']}! = {q['fact']}")
