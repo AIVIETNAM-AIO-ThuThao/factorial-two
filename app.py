@@ -92,8 +92,7 @@ if st.button("Submit", disabled=st.session_state.da_nop):
         st.balloons()  # Bóng bay bay lên
         
     else:
-        # Nếu tỷ lệ đúng ≤ 80%, hiển thị thông báo động viên
+        # Nếu tỷ lệ đúng ≤ 80%, hiển thị ảnh cáo cát
         st.warning(f"😅 Bạn làm đúng {st.session_state.ty_le:.0f}% (≤80%)")
-            # === HIỂN THỊ HÌNH ẢNH CÁO CÁT ===
-        st.image(G:\My Drive\1. DOING\TIENG ANH\0-hoc\AI\ALL ABOUT WARM UP\KEEPTRACK7\DAY 1\Factorial app\150325_lacool_cao5-f1150.webp
+        st.image(image.png
             )
