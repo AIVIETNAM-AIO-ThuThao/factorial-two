@@ -37,6 +37,7 @@ st.write(f"**Tính:** {q['n']}! = ?")
 
 # Nhận đáp án từ người dùng
 q["answer"] = st.text_input(
+    "Đáp án là: "
     key="cau_1",  
     disabled=st.session_state.da_nop
 )
