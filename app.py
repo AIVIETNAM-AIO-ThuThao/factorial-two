@@ -4,17 +4,17 @@ import random
 
 # Cấu hình trang có đười ươi
 st.set_page_config(
-    page_title="Giai thừa",
+    page_title="🦍🦍 Giai thừa",
     layout="wide",  
     page_icon="🦍"
 )
 
 # Logo trang không thể thiếu khỉ đột
 st.logo(
-    image="https://img.icons8.com/color/96/000000/orangutan.png",
+    image="assets/khi.png",
 )
 
-st.title("Giai thừa")
+st.title("Giai thừa!")
 st.header("Ai thông minh hơn khỉ đột? 🦍 🦍 🦍")
 st.markdown("---")
 
@@ -43,7 +43,7 @@ q["answer"] = st.text_input(
 )
 
 # Nộp
-if st.button("Nộp bài", disabled=st.session_state.da_nop):
+if st.button("Sure!", disabled=st.session_state.da_nop):
     st.session_state.da_nop = True      #đổi trạng thái rồi mới kiểm tra  
     if q["answer"] and q["answer"].strip():
         try:
@@ -65,7 +65,7 @@ if st.session_state.da_nop:  # ✅ Kiểm tra đã nộp bài chưa
     if q["right_wrong"]:
         # TRƯỜNG HỢP ĐÚNG
         st.success(f"ĐÚNG! {q['n']}! = {q['fact']}")
-        st.video("assets/video.mp4")
+        st.video("assets/video.mp4", width=400, autoplay=True)
         st.balloons()
         
     else:
