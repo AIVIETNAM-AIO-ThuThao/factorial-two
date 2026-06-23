@@ -5,11 +5,12 @@ import random
 # Cấu hình trang
 st.set_page_config(
     page_title="Giai thừa",
-    layout="centered"
+    layout="wide"
+    page_icon="🦍"
 )
 # lồng logo
 st.logo(
-    image="https://icons8.com/icon/Dd9gUGZYYW3e/orangutan",
+    image="https://img.icons8.com/color/96/000000/orangutan.png",
 )
 
 
@@ -36,10 +37,10 @@ if "questions" not in st.session_state:
             "right_wrong": None
         })
     
-    # Biến kiểm tra xem người dùng đã nộp bài chưa (mặc định False)
-    
+    # # gán cờ false cho việc người dùng nộp bài
+    st.session_state.da_nop = False 
 # Hiển thị 5 câu hỏi ra màn hình
-st.session_state.da_nop = False     # gán cờ false cho việc người dùng nộp bài
+
 for i, q in enumerate(st.session_state.questions):
     st.write(f"Câu {i+1}: {q['n']}! = ?")
     
@@ -83,7 +84,6 @@ if st.button("Submit", disabled=st.session_state.da_nop):
     st.rerun()
 
     
-    # Vài hiệu ứng
     # Nếu tỷ lệ đúng lớn hơn 80%
     if st.session_state.ty_le > 80:
         # Phát video từ YouTube (có thể thay link khác)
@@ -94,5 +94,4 @@ if st.button("Submit", disabled=st.session_state.da_nop):
     else:
         # Nếu tỷ lệ đúng ≤ 80%, hiển thị ảnh cáo cát
         st.warning(f"😅 Bạn làm đúng {st.session_state.ty_le:.0f}% (≤80%)")
-        st.image(image.png
-            )
+        st.image(image.png)
